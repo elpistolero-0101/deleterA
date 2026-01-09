@@ -1,0 +1,295 @@
+📌 ¿QUÉ ES DELETER?
+
+DELETER es un programa de terminal en Python diseñado para ejecutarse en Android mediante Termux.
+Permite desinstalar aplicaciones de dos maneras:
+
+Desinstalación normal
+
+Desinstalación segura de aplicaciones del sistema
+
+Eliminación completa de aplicaciones del sistema (modo experto)
+
+El programa está pensado para usuarios que saben lo que están haciendo y ofrece medidas de seguridad para evitar daños accidentales.
+
+⚙️ FUNCIONES PRINCIPALES
+1️⃣ Eliminar aplicaciones normales
+
+Desinstala aplicaciones instaladas por el usuario.
+
+NO requiere root.
+
+Usa el comando estándar de Android:
+
+pm uninstall nombre.del.paquete
+
+2️⃣ Eliminar aplicaciones del sistema – DESINSTALACIÓN SEGURA ✅
+
+NO requiere contraseña
+
+NO borra archivos del sistema
+
+NO rompe Android
+
+Puede usarse sin root (en muchos casos)
+
+Utiliza:
+
+pm uninstall --user 0 nombre.del.paquete
+
+
+📌 Esto:
+
+Oculta la app para el usuario principal
+
+Es reversible
+
+Es el método recomendado
+
+3️⃣ Eliminar aplicaciones del sistema – MODO EXPERTO 🔐
+
+⚠️ ESTE MODO ES PELIGROSO
+
+REQUIERE ROOT OBLIGATORIO
+
+Pide contraseña especial
+
+Elimina archivos reales del sistema
+
+NO es reversible
+
+Contraseña del modo experto:
+
+el_pistolero_root
+
+
+Comandos utilizados:
+
+rm -rf /system/app/APP
+rm -rf /system/priv-app/APP
+
+🔐 SOBRE EL ROOT (MUY IMPORTANTE)
+
+❌ Este programa NO rootea el dispositivo
+❌ El root NO se obtiene automáticamente
+
+👉 El root debe hacerse MANUALMENTE antes de usar el modo experto.
+
+Si el dispositivo:
+
+❌ NO tiene root →
+✔️ Solo funcionará la desinstalación segura
+
+✅ SÍ tiene root →
+✔️ Se habilita el modo experto (con contraseña)
+
+🧨 RIESGOS REALES DEL MODO EXPERTO
+
+Eliminar aplicaciones del sistema puede causar:
+
+Bootloop (Android no inicia)
+
+Fallos graves del sistema
+
+Apps que dejan de funcionar
+
+Brick parcial o total del dispositivo
+
+Pérdida de datos
+
+Anulación de garantía
+
+⚠️ NO eliminar:
+
+SystemUI
+
+Google Services
+
+WebView
+
+Package Installer
+
+Play Services
+
+🧭 PASOS PARA USAR DELETER EN TERMUX
+1️⃣ Instalar dependencias
+
+En Termux:
+
+pkg update
+pkg install python tsu
+
+2️⃣ Ejecutar el programa
+
+Ubicarse en la carpeta donde está el archivo:
+
+python deleter.py
+
+🧠 RESPONSABILIDAD DEL USUARIO
+
+Este programa:
+
+NO garantiza seguridad total
+
+NO previene todos los errores
+
+NO se hace responsable por daños
+
+👉 El uso del programa es TOTAL responsabilidad del usuario
+👉 El usuario acepta los riesgos al utilizar el modo experto
+
+📦 COMPARTIR EL PROGRAMA
+
+Para compartir DELETER solo se necesita:
+
+La carpeta DELETER
+
+El archivo deleter.py
+
+Este README
+
+Se recomienda comprimir todo en un archivo:
+
+DELETER.zip
+
+👤 AUTOR
+
+Este programa fue hecho por:
+
+el_pistolero
+
+✅ RECOMENDACIONES FINALES
+
+✔️ Usar siempre primero la desinstalación segura
+✔️ Hacer backup antes de usar root
+🔓 ¿CÓMO OBTENER ROOT PARA USAR EL MODO EXPERTO?
+
+⚠️ IMPORTANTE – LEER ANTES DE CONTINUAR
+
+Rootear un dispositivo NO es obligatorio para usar DELETER
+
+SOLO es necesario si se quiere usar:
+
+👉 Modo experto – Eliminación completa
+
+Rootear:
+
+❌ Puede borrar todos los datos
+
+❌ Anula garantía
+
+❌ Puede dañar el dispositivo si se hace mal
+
+Este programa NO rootea el dispositivo.
+El root debe hacerse manualmente y bajo responsabilidad del usuario.
+
+📌 MÉTODO MÁS COMÚN: MAGISK (RECOMENDADO)
+
+⚠️ Los pasos exactos dependen del modelo del teléfono.
+Lo siguiente es una guía general, no específica para un modelo.
+
+🧩 REQUISITOS PREVIOS
+
+Un celular Android
+
+Una computadora (Windows / Linux)
+
+Cable USB
+
+Batería cargada
+
+Backup de datos (MUY IMPORTANTE)
+
+1️⃣ DESBLOQUEAR BOOTLOADER
+
+Activar Opciones de desarrollador
+
+Activar:
+
+✔️ Desbloqueo OEM
+
+✔️ Depuración USB
+
+Conectar el celular a la PC
+
+Desbloquear el bootloader
+
+⚠️ Este paso:
+
+Borra TODOS los datos
+
+Es obligatorio para root
+
+2️⃣ INSTALAR MAGISK
+
+Descargar Magisk APK (sitio oficial)
+
+Instalarlo como una app normal
+
+Abrir Magisk
+
+3️⃣ PARCHEAR EL BOOT.IMG
+
+Extraer el archivo boot.img de la ROM del dispositivo
+
+Abrir Magisk
+
+Seleccionar:
+
+Instalar → Parchear archivo boot.img
+
+
+Magisk generará un archivo parcheado
+
+4️⃣ FLASHEAR BOOT PARCHEADO
+
+Desde la PC, usando fastboot:
+
+Flashear el boot.img parcheado
+
+Reiniciar el dispositivo
+
+5️⃣ VERIFICAR ROOT
+
+Al reiniciar:
+
+Abrir Magisk
+
+Debe decir:
+
+Root instalado
+
+
+En Termux:
+
+su
+
+
+Si aparece una ventana pidiendo permisos → ✔️ ROOT FUNCIONA
+
+🔑 ROOT Y DELETER
+
+✔️ Sin root:
+
+Solo funciona desinstalación segura
+
+✔️ Con root:
+
+Se habilita el modo experto (con contraseña)
+
+Se pueden eliminar archivos del sistema
+
+⚠️ ADVERTENCIA FINAL SOBRE ROOT
+
+Rootear es una decisión personal.
+
+El autor del programa:
+
+❌ NO se hace responsable
+
+❌ NO garantiza compatibilidad
+
+❌ NO ofrece soporte para dispositivos dañados
+
+👉 El uso del root y de este programa es responsabilidad total del usuario
+
+GRACIAS POR USAR
